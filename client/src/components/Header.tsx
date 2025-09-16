@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ChevronDown, Menu, X, Calendar } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import Logo from "./Logo";
 
 const products = [
   {
@@ -45,11 +46,8 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 max-w-7xl">
         {/* Logo */}
         <Link href="/" data-testid="link-home">
-          <div className="flex items-center space-x-2 hover-elevate active-elevate-2 rounded-md px-2 py-1">
-            <div className="h-8 w-8 bg-primary rounded-md flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">FW</span>
-            </div>
-            <span className="font-semibold text-lg text-foreground">Founder Workspace</span>
+          <div className="flex items-center space-x-3 hover-elevate active-elevate-2 rounded-md px-2 py-1">
+            <Logo />
           </div>
         </Link>
 

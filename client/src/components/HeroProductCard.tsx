@@ -28,8 +28,8 @@ export default function HeroProductCard({ shortName, fullName, href, icon, delay
 
   return (
     <div 
-      className="opacity-0 translate-y-8 animate-in slide-in-from-bottom-8 fill-mode-forwards"
-      style={{ animationDelay: `${delay}ms`, animationDuration: '600ms' }}
+      className="animate-slide-in-from-bottom"
+      style={{ animationDelay: `${delay}ms` }}
     >
       <Card 
         className="group relative overflow-hidden border-card-border bg-card/80 backdrop-blur-sm hover-elevate transition-all duration-500 hover:scale-105 hover:shadow-lg"

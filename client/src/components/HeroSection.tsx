@@ -20,33 +20,33 @@ export default function HeroSection() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-gradient-to-r from-primary/2 to-transparent rounded-full blur-3xl animate-spin-slow"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-blue-500/10 rounded-full blur-3xl animate-spin-slow"></div>
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-8 opacity-0 translate-x-8 animate-in slide-in-from-left-8 fill-mode-forwards" style={{ animationDuration: '800ms' }}>
+          <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0ms' }}>
             <div className="space-y-6">
-              <Badge variant="secondary" className="w-fit animate-in fade-in-0 fill-mode-forwards" style={{ animationDelay: '200ms' }}>
+              <Badge variant="secondary" className="w-fit animate-fade-in" style={{ animationDelay: '200ms' }}>
                 <Sparkles className="h-3 w-3 mr-1 animate-pulse" />
                 Professional Software Solutions
               </Badge>
               
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight opacity-0 translate-y-4 animate-in slide-in-from-bottom-4 fill-mode-forwards" style={{ animationDelay: '400ms', animationDuration: '800ms' }}>
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight animate-slide-in-from-bottom" style={{ animationDelay: '400ms' }}>
                 Empower Your Business with{" "}
-                <span className="text-primary bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent animate-pulse">
+                <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent animate-pulse">
                   Smart Software
                 </span>
               </h1>
               
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg opacity-0 translate-y-4 animate-in slide-in-from-bottom-4 fill-mode-forwards" style={{ animationDelay: '600ms', animationDuration: '800ms' }}>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg animate-slide-in-from-bottom" style={{ animationDelay: '600ms' }}>
                 Transform your operations with our comprehensive suite of CRM, ERP, and Billing solutions. 
                 Built for modern businesses that demand efficiency, scalability, and results.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 opacity-0 translate-y-4 animate-in slide-in-from-bottom-4 fill-mode-forwards" style={{ animationDelay: '800ms', animationDuration: '800ms' }}>
+            <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-from-bottom" style={{ animationDelay: '800ms' }}>
               <Button 
                 size="lg" 
                 onClick={handleBookAppointment}
@@ -71,7 +71,7 @@ export default function HeroSection() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-8 border-t border-border opacity-0 translate-y-4 animate-in slide-in-from-bottom-4 fill-mode-forwards" style={{ animationDelay: '1000ms', animationDuration: '800ms' }}>
+            <div className="pt-8 border-t border-border animate-slide-in-from-bottom" style={{ animationDelay: '1000ms' }}>
               <p className="text-sm text-muted-foreground mb-4">Trusted by innovative companies worldwide</p>
               <div className="flex items-center gap-8">
                 <div className="text-center group">

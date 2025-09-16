@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Users, Building, CreditCard } from "lucide-react";
+import Logo from "./Logo";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -36,11 +37,8 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <Link href="/" data-testid="link-footer-home">
-                <div className="flex items-center space-x-2 mb-6 hover-elevate active-elevate-2 rounded-md px-2 py-1 w-fit">
-                  <div className="h-8 w-8 bg-primary rounded-md flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold text-sm">FW</span>
-                  </div>
-                  <span className="font-semibold text-lg text-foreground">Founder Workspace</span>
+                <div className="flex items-center space-x-3 mb-6 hover-elevate active-elevate-2 rounded-md px-2 py-1 w-fit">
+                  <Logo />
                 </div>
               </Link>
               

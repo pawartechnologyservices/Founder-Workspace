@@ -48,21 +48,21 @@
 
   --popover-border: 220 14% 92%;
 
-  --primary: #eb1a4e;
+  --primary: 320 85% 65%;
 
-  --primary-foreground: #ffffff;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: #c4c4c4;
+  --secondary: 300 40% 85%;
 
-  --secondary-foreground: #1a1a1a;
+  --secondary-foreground: 320 15% 25%;
 
   --muted: #e3e3e3;
 
   --muted-foreground: #212121;
 
-  --accent: 0 0% 100%;
+  --accent: 300 50% 95%;
 
-  --accent-foreground: 0 0% 10.2%;
+  --accent-foreground: 320 15% 25%;
 
   --destructive: 0 0% 0%;
 
@@ -166,7 +166,7 @@
 
   --popover-border: 216 15% 16%;
 
-  --primary: 9 75% 61%;
+  --primary: 285 85% 70%;
 
   --primary-foreground: 0 0% 100%;
 
@@ -236,6 +236,17 @@
  * need to be distinguished from eachother visually.
  */
 @layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-slide-in-from-bottom {
+    animation: slide-in-from-bottom-4 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(1rem);
+  }
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
   input[type="search"]::-webkit-search-cancel-button {

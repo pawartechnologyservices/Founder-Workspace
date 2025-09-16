@@ -10,6 +10,8 @@ import ERP from "@/pages/ERP";
 import Billing from "@/pages/Billing";
 import FAQ from "@/pages/FAQ";
 import Contact from "@/pages/Contact";
+import BookDemo from "@/pages/BookDemo";
+import BookMeeting from "@/pages/BookMeeting";
 
 function Router() {
   return (
@@ -20,6 +22,8 @@ function Router() {
       <Route path="/billing" component={Billing} />
       <Route path="/faq" component={FAQ} />
       <Route path="/contact" component={Contact} />
+      <Route path="/book-demo" component={BookDemo} />
+      <Route path="/book-meeting" component={BookMeeting} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

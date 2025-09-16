@@ -37,8 +37,7 @@ export default function Header() {
   const [location] = useLocation();
 
   const handleBookMeet = () => {
-    console.log("Book a Meet clicked - would open scheduling system");
-    // TODO: Integrate with real meeting scheduling system
+    window.location.href = '/book-meeting';
   };
 
   return (

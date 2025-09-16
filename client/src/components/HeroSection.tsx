@@ -4,14 +4,12 @@ import { Calendar, Star, Sparkles } from "lucide-react";
 import HeroProductCard from "./HeroProductCard";
 
 export default function HeroSection() {
-  const handleBookAppointment = () => {
-    console.log("Book Appointment clicked - would open scheduling system");
-    // TODO: Integrate with real meeting scheduling system
+  const handleBookDemo = () => {
+    window.location.href = '/book-demo';
   };
 
-  const handleFoundersClub = () => {
-    console.log("Founders Club clicked - coming soon");
-    // TODO: Implement founders club functionality
+  const handleBookMeeting = () => {
+    window.location.href = '/book-meeting';
   };
 
   return (
@@ -49,24 +47,23 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-from-bottom" style={{ animationDelay: '800ms' }}>
               <Button 
                 size="lg" 
-                onClick={handleBookAppointment}
-                data-testid="button-hero-book-appointment"
+                onClick={handleBookDemo}
+                data-testid="button-hero-book-demo"
                 className="flex items-center gap-2 hover:scale-105 transition-transform duration-300"
               >
                 <Calendar className="h-5 w-5" />
-                Book Appointment
+                Book Demo
               </Button>
               
               <Button 
                 size="lg" 
                 variant="outline" 
-                onClick={handleFoundersClub}
-                data-testid="button-hero-founders-club"
-                disabled
+                onClick={handleBookMeeting}
+                data-testid="button-hero-book-meeting"
                 className="flex items-center gap-2 hover:scale-105 transition-transform duration-300"
               >
                 <Star className="h-5 w-5" />
-                Founders Club – Coming Soon
+                Book Meeting
               </Button>
             </div>
 

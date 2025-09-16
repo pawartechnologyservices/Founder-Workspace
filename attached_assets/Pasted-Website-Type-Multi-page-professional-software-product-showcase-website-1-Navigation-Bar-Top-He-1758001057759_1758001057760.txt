@@ -1,0 +1,122 @@
+Website Type:
+Multi-page, professional software product showcase website.
+
+1. Navigation Bar (Top Header)
+
+Left side: Company Logo.
+
+Right side items:
+
+Home
+
+Products (Dropdown)
+
+CRM Software
+
+ERP Software
+
+Billing Software
+
+FAQ
+
+Contact
+
+Far Right (Top Right Corner):
+
+Button: "Book a Meet" → Opens meeting scheduling (e.g., Google Meet or integrated booking system).
+
+2. Hero Section (Landing Section)
+
+Left side (Content & Buttons):
+
+Headline + Subheadline text.
+
+Two buttons below text:
+
+"Book Appointment" (links to meeting booking system).
+
+"Founders Club – Coming Soon" (inactive or placeholder).
+
+Right side (Three Animated Cards):
+
+Card 1: CRM Software
+
+Title: "CRM Software"
+
+Subtitle: "Customer Relationship Management"
+
+Card 2: ERP Software
+
+Title: "ERP Software"
+
+Subtitle: "Enterprise Resource Planning"
+
+Card 3: Billing Software
+
+Title: "Billing Software"
+
+Subtitle: "Simplify Invoicing & Payments"
+
+(Cards should have modern animated UI with hover effects.)
+
+3. Section: Why Choose Us / Who We Are
+
+Title: "Why Choose Us?" or "Who We Are – The Founder Workspace"
+
+Content area to explain company vision, values, and uniqueness.
+
+4. Section: Our Process
+
+Title: "How Our Software Works"
+
+Step-by-step or infographic-style explanation of how the system works.
+
+5. Section: Software Details
+
+Brief descriptions of the 3 core products (CRM, ERP, Billing).
+
+Each product block should link to its dedicated Welcome Page.
+
+6. Dedicated Welcome Pages
+
+Each product (CRM, ERP, Billing) has its own Welcome Page, accessible from:
+
+Navbar dropdown (Products).
+
+Hero Section (3 cards).
+
+Footer links (3 software links).
+
+Welcome Page Layout (for CRM / ERP / Billing):
+
+Banner/Heading introducing the product.
+
+Space for product description (to be filled later).
+
+Section for key features & benefits.
+
+CTA: "Book a Demo" or "Get Started".
+
+7. Footer
+
+Standard footer with:
+
+Company logo (left).
+
+Quick links (Home, FAQ, Contact).
+
+3 software product links (CRM, ERP, Billing) → clicking navigates to each Welcome Page.
+
+8. Color Theme
+
+Base theme should match brand logo colors (mainly blue tones).
+
+Modern, clean, corporate design with professional typography.
+
+✅ Key Focus:
+
+Smooth navigation between Home → CRM / ERP / Billing Welcome Pages via Navbar, Hero Cards, and Footer Links.
+
+Scalable structure so more product pages can be added later.
+
+Simple content placeholders (text will be provided later by me).

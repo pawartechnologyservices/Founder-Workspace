@@ -73,14 +73,16 @@ export default function Header() {
                   <div className="w-96 p-4">
                     <div className="grid gap-3">
                       {products.map((product) => (
-                        <Link key={product.href} href={product.href} data-testid={`link-product-${product.href.replace('/', '')}`}>
-                          <NavigationMenuLink className="block space-y-1 rounded-md p-3 hover-elevate active-elevate-2">
-                            <div className="text-sm font-medium leading-none">{product.title}</div>
-                            <p className="text-sm leading-snug text-muted-foreground">
-                              {product.description}
-                            </p>
-                          </NavigationMenuLink>
-                        </Link>
+                        <div key={product.href}>
+                          <Link href={product.href} data-testid={`link-product-${product.href.replace('/', '')}`}>
+                            <div className="block space-y-1 rounded-md p-3 hover-elevate active-elevate-2">
+                              <div className="text-sm font-medium leading-none">{product.title}</div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                                {product.description}
+                              </p>
+                            </div>
+                          </Link>
+                        </div>
                       ))}
                     </div>
                   </div>

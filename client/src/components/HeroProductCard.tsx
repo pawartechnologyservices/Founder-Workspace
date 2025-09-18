@@ -2,80 +2,85 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Building, CreditCard, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface HeroProductCardProps {
   shortName: string;
   fullName: string;
+  description: string;
   href: string;
-  icon: "crm" | "erp" | "billing";
+  index: number;
   delay?: number;
 }
 
-const iconMap = {
-  crm: Users,
-  erp: Building, 
-  billing: CreditCard,
-};
-
-export default function HeroProductCard({ shortName, fullName, href, icon, delay = 0 }: HeroProductCardProps) {
+export default function HeroProductCard({ shortName, fullName, description, href, index, delay = 0 }: HeroProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const Icon = iconMap[icon];
 
-  const handleViewProduct = () => {
-    console.log(`View ${shortName} product clicked`);
+  const handleViewDetails = () => {
+    console.log(`View ${shortName} details clicked`);
   };
 
+  // Define colors based on index (matching the image)
+  const backgroundColor =
+    index === 0
+      ? "bg-[#136bb4]" // CRM - dark blue
+      : index === 1
+      ? "bg-[#5b3dbd]" // ERP - dark purple
+      : "bg-[#b72452]"; // Billing - dark pink/red
+
+  const circleColor =
+    index === 0
+      ? "bg-[#0078d4]" // Blue circle for CRM
+      : index === 1
+      ? "bg-[#6b2dd6]" // Purple circle for ERP
+      : "bg-[#e63757]"; // Pink circle for Billing
+
   return (
-    <div 
-      className="animate-slide-in-from-bottom"
+    <div
+      className="animate-slide-in-from-bottom w-full"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <Card 
-        className="group relative overflow-hidden border-card-border bg-card/80 backdrop-blur-sm hover-elevate transition-all duration-500 hover:scale-105 hover:shadow-lg"
+      <Card
+        className={`group relative overflow-hidden border-0 transition-all duration-300 hover:shadow-lg
+          w-full max-w-[380px] h-[180px] md:max-w-[720px] md:h-[200px] ${backgroundColor}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        data-testid={`hero-card-${icon}`}
+        data-testid={`hero-card-${shortName.toLowerCase()}`}
       >
-        <CardContent className="p-6">
-          {/* Icon */}
-          <div className="mb-4 flex justify-center">
-            <div className={`w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-all duration-500 ${
-              isHovered ? "bg-primary scale-110 rotate-3" : ""
-            }`}>
-              <Icon className={`h-6 w-6 transition-all duration-500 ${
-                isHovered ? "text-primary-foreground scale-110" : "text-primary"
-              }`} />
-            </div>
-          </div>
+        {/* Circle in bottom right corner */}
+        <div className={`absolute bottom-0 right-0 w-20 h-20 rounded-tl-full ${circleColor} opacity-20`}></div>
 
+        <CardContent className="p-6 md:p-8 flex flex-col justify-between h-full relative z-10">
           {/* Content */}
-          <div className="text-center space-y-3">
-            <h3 className="text-lg font-bold text-card-foreground transition-colors duration-300">
-              {shortName}
-            </h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              {fullName}
+          <div>
+           <div className="flex items-baseline whitespace-nowrap">
+  <h3 className="text-lg md:text-xl font-medium text-white">
+    {shortName}
+  </h3>
+  <span className="ml-2 text-sm md:text-base font-semibold text-white/60">
+    {fullName}
+  </span>
+</div>
+
+
+            {/* Description - now allowed to wrap naturally */}
+            <p className="mt-2 text-sm md:text-base text-white leading-relaxed">
+              {description}
             </p>
           </div>
 
           {/* Button */}
-          <div className="mt-4">
-            <Link href={href} data-testid={`link-hero-card-${icon}`}>
-              <Button 
-                variant="ghost" 
-                size="sm"
-                className="w-full text-xs justify-between group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-                onClick={handleViewProduct}
-                data-testid={`button-view-product-${icon}`}
-              >
-                View Product
-                <ArrowRight className={`h-3 w-3 transition-transform duration-300 ${
-                  isHovered ? "translate-x-1" : ""
-                }`} />
-              </Button>
-            </Link>
-          </div>
+          <Link href={href} data-testid={`link-hero-card-${shortName.toLowerCase()}`}>
+            <Button
+              variant="ghost"
+              className="px-0 text-sm md:text-base font-medium text-white hover:text-white border border-transparent hover:border-white transition-colors duration-300"
+              onClick={handleViewDetails}
+              data-testid={`button-view-details-${shortName.toLowerCase()}`}
+            >
+              View Details
+              <ArrowRight className="h-4 w-4 md:h-5 md:w-5 ml-2" />
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </div>

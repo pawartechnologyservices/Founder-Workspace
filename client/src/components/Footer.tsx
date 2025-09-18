@@ -11,9 +11,9 @@ const quickLinks = [
 ];
 
 const softwareLinks = [
-  { label: "CRM Software", href: "/crm", icon: Users },
-  { label: "ERP Software", href: "/erp", icon: Building },
-  { label: "Billing Software", href: "/billing", icon: CreditCard },
+  { label: "CRM Software", href: "/crm-welcome", icon: Users },
+  { label: "ERP Software", href: "/erp-welcome", icon: Building },
+  { label: "Billing Software", href: "/billing-welcome", icon: CreditCard },
 ];
 
 const contactInfo = [

@@ -2,47 +2,58 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Search, Settings, Rocket, ArrowRight } from "lucide-react";
+import { useLocation } from "wouter";
 
 const steps = [
   {
     icon: MessageCircle,
     number: "01",
     title: "Discovery & Consultation",
-    description: "We begin with an in-depth consultation to understand your business needs, challenges, and goals.",
-    details: ["Business requirements analysis", "Current workflow assessment", "Goal setting and KPI definition"],
+    description:
+      "We begin with an in-depth consultation to understand your business needs, challenges, and goals.",
+    details: [
+      "Business requirements analysis",
+      "Current workflow assessment",
+      "Goal setting and KPI definition",
+    ],
   },
   {
     icon: Search,
-    number: "02", 
+    number: "02",
     title: "Solution Design",
-    description: "Our experts design a customized solution architecture tailored specifically to your business processes.",
+    description:
+      "Our experts design a customized solution architecture tailored specifically to your business processes.",
     details: ["Custom solution blueprint", "Integration planning", "User experience design"],
   },
   {
     icon: Settings,
     number: "03",
     title: "Implementation & Setup",
-    description: "Seamless deployment with minimal disruption to your daily operations and comprehensive team training.",
+    description:
+      "Seamless deployment with minimal disruption to your daily operations and comprehensive team training.",
     details: ["System configuration", "Data migration", "Team training sessions"],
   },
   {
     icon: Rocket,
     number: "04",
-    title: "Launch & Optimize", 
-    description: "Go live with confidence and continuous optimization to ensure you're getting maximum value.",
+    title: "Launch & Optimize",
+    description:
+      "Go live with confidence and continuous optimization to ensure you're getting maximum value.",
     details: ["Production deployment", "Performance monitoring", "Ongoing optimization"],
   },
 ];
 
 export default function OurProcess() {
+  const [, setLocation] = useLocation();
+
   const handleGetStarted = () => {
-    console.log("Get Started clicked - would open contact form");
-    // TODO: Navigate to contact form or booking system
+    setLocation("/book-demo");
   };
 
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-6xl">
+        {/* Section Header */}
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
             Our Process
@@ -51,24 +62,23 @@ export default function OurProcess() {
             How Our Software Works
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From initial consultation to full deployment, we follow a proven methodology that ensures 
+            From initial consultation to full deployment, we follow a proven methodology that ensures
             successful implementation and long-term success for your business.
           </p>
         </div>
 
-        <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        {/* Process Steps */}
+        <div className="grid gap-12 sm:grid-cols-1 lg:grid-cols-2 place-items-center">
           {steps.map((step, index) => {
             const Icon = step.icon;
-            const isEven = index % 2 === 1;
-            
             return (
-              <div 
-                key={index} 
-                className={`flex ${isEven ? 'lg:flex-row-reverse' : ''} gap-6 items-start`}
+              <div
+                key={index}
+                className="flex flex-col items-center text-center lg:items-start lg:text-left max-w-md w-full"
                 data-testid={`process-step-${index + 1}`}
               >
                 {/* Step Number & Icon */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 mb-6">
                   <div className="relative">
                     <div className="w-20 h-20 bg-primary rounded-lg flex items-center justify-center">
                       <Icon className="h-10 w-10 text-primary-foreground" />
@@ -80,20 +90,21 @@ export default function OurProcess() {
                 </div>
 
                 {/* Content */}
-                <Card className="flex-1 border-card-border bg-card hover-elevate">
+                <Card className="w-full border-card-border bg-card hover:shadow-lg transition">
                   <CardContent className="p-8">
                     <h3 className="text-xl font-semibold text-card-foreground mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {step.description}
-                    </p>
-                    
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{step.description}</p>
+
                     <div className="space-y-2">
                       <h4 className="text-sm font-medium text-card-foreground">What's included:</h4>
                       <ul className="space-y-1">
                         {step.details.map((detail, detailIndex) => (
-                          <li key={detailIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <li
+                            key={detailIndex}
+                            className="flex items-center gap-2 text-sm text-muted-foreground"
+                          >
                             <div className="w-1.5 h-1.5 bg-primary rounded-full" />
                             {detail}
                           </li>
@@ -108,19 +119,19 @@ export default function OurProcess() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-lg p-12">
+        <div className="mt-20 flex justify-center">
+          <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-lg p-12 max-w-3xl text-center">
             <h3 className="text-2xl font-semibold text-foreground mb-4">
               Ready to Transform Your Business?
             </h3>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's discuss how our software solutions can streamline your operations and drive growth.
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               onClick={handleGetStarted}
               data-testid="button-process-get-started"
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 mx-auto"
             >
               Get Started Today
               <ArrowRight className="h-5 w-5" />

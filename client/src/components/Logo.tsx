@@ -5,7 +5,7 @@ interface LogoProps {
   alt?: string;
 }
 
-export default function Logo({ className = "h-8 w-auto", alt = "Founder Workspace Logo" }: LogoProps) {
+export default function Logo({ className = "h-14 w-auto", alt = "Founder Workspace Logo" }: LogoProps) {
   return (
     <img 
       src={logoImage}

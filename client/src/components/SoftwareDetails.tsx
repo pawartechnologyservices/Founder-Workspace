@@ -10,7 +10,7 @@ const software = [
     title: "CRM Software",
     subtitle: "Customer Relationship Management",
     description: "Transform your customer relationships with our comprehensive CRM platform. Track leads, manage contacts, and boost sales performance with intelligent insights.",
-    href: "/crm",
+    href: "/crm-welcome",
     key: "crm",
     features: [
       "Advanced Lead Management",
@@ -26,7 +26,7 @@ const software = [
     title: "ERP Software", 
     subtitle: "Enterprise Resource Planning",
     description: "Unify your entire business operations with our powerful ERP solution. From inventory to finance, streamline every process for maximum efficiency.",
-    href: "/erp",
+    href: "/erp-welcome",
     key: "erp", 
     features: [
       "Inventory Management System",
@@ -42,7 +42,7 @@ const software = [
     title: "Billing Software",
     subtitle: "Simplify Invoicing & Payments", 
     description: "Automate your billing processes and get paid faster. Create professional invoices, track payments, and manage your cash flow effortlessly.",
-    href: "/billing",
+    href: "/billing-welcome",
     key: "billing",
     features: [
       "Automated Invoice Generation",
@@ -156,26 +156,28 @@ export default function SoftwareDetails() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-lg p-12">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">
-              Need a Complete Solution?
-            </h3>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Combine multiple products for a fully integrated business management system. 
-              Contact us to design the perfect software ecosystem for your organization.
-            </p>
-            <Button 
-              size="lg" 
-              onClick={handleExploreAll}
-              data-testid="button-explore-all-products"
-              className="flex items-center gap-2"
-            >
-              Explore All Products
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-          </div>
-        </div>
+       {/* Bottom CTA */}
+<div className="mt-16 text-center">
+  <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-lg p-12">
+    <h3 className="text-2xl font-semibold text-foreground mb-4">
+      Need a Complete Solution?
+    </h3>
+    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+      Combine multiple products for a fully integrated business management system. 
+      Contact us to design the perfect software ecosystem for your organization.
+    </p>
+    <Button 
+      size="lg" 
+      onClick={handleExploreAll}
+      data-testid="button-explore-all-products"
+      className="flex items-center gap-2 mx-auto"
+    >
+      Explore All Products
+      <ArrowRight className="h-5 w-5" />
+    </Button>
+  </div>
+</div>
+
       </div>
     </section>
   );

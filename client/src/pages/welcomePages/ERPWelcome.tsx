@@ -59,9 +59,9 @@ export default function ERPWelcome() {
   };
 
   const handleGetStarted = () => {
-    console.log(`Get started with ${config.title} clicked`);
-    setLocation("/contact"); // redirect user to contact/signup form
-  };
+  window.location.href = "https://pts-erp-appli.netlify.app/"; 
+};
+
 
   return (
     <div className="min-h-screen bg-background">

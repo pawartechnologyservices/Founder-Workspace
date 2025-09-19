@@ -98,10 +98,9 @@ export default function CRMWelcome() {
     setLocation("/book-demo"); // ✅ client-side navigation
   };
 
-  const handleGetStarted = () => {
-    console.log(`Get started with ${config.title} clicked`);
-    // TODO: Replace with real navigation (signup/contact)
-  };
+const handleGetStarted = () => {
+  window.location.href = "https://pts-crm-appli.netlify.app/"; 
+};
 
   return (
     <div className="min-h-screen bg-background">

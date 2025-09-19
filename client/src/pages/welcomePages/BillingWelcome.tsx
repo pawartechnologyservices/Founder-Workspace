@@ -57,10 +57,11 @@ export default function BillingWelcome() {
     setLocation("/book-demo"); // ✅ client-side navigation
   };
 
-  const handleGetStarted = () => {
-    console.log(`Get started with ${config.title} clicked`);
-    // Later, navigate to signup or contact form
-  };
+ const handleGetStarted = () => {
+  window.location.href = "https://pts-billing-appli.netlify.app/"; 
+  // ✅ Redirects in the same tab
+};
+
 
   return (
     <div className="min-h-screen bg-background">

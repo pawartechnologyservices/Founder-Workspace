@@ -95,26 +95,6 @@ const TeamSection: React.FC = () => {
                 <p className="text-gray-300 mb-5 max-w-md mx-auto md:text-lg">
                   Together we create solutions that make a difference
                 </p>
-                <div className="flex justify-center space-x-4">
-                  <a
-                    href="#"
-                    className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
-                  >
-                    <Linkedin className="h-5 w-5 md:h-6 md:w-6" />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
-                  >
-                    <Twitter className="h-5 w-5 md:h-6 md:w-6" />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
-                  >
-                    <Github className="h-5 w-5 md:h-6 md:w-6" />
-                  </a>
-                </div>
               </div>
             </motion.div>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import aiImage from "../assets/images/11.jpg"; // your image path
+import aiImage from "../assets/images/about.png"; // your image path
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -75,7 +75,7 @@ const SolutionsSection: React.FC = () => {
           <motion.img
             src={aiImage}
             alt="AI Creative"
-            className="object-cover w-full h-full max-h-[300px] md:max-h-none rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+            className="object-cover w-full h-96 max-h-[300px] md:max-h-none rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
             initial={{ scale: 1.2, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}

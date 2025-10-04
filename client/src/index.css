@@ -289,6 +289,7 @@
   .no-default-active-elevate {}
 
 
+
   /**
    * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
    * This way they can stack/compound. Both will overlap the parent's borders!
@@ -356,5 +357,14 @@
   .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
+  }
+}
+
+@keyframes rgbShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
   }
 }

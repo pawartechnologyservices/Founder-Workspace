@@ -17,9 +17,9 @@ const softwareLinks = [
 ];
 
 const contactInfo = [
-  { icon: Mail, label: "hello@founderworkspace.com" },
-  { icon: Phone, label: "+1 (555) 123-4567" },
-  { icon: MapPin, label: "San Francisco, CA" },
+  { icon: Mail, label: "hello@founderworkspace.in" },
+  { icon: Phone, label: "+91 909-664-9556" },
+  { icon: MapPin, label: "Office No A1002 Boulevard Towers,Sadhu Vaswani Chowk, Camp,Pune, Maharashtra 411001, India" },
 ];
 
 export default function Footer() {
@@ -119,7 +119,7 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-center lg:text-right">
               <p className="text-sm text-muted-foreground">
-                © 2024 Founder Workspace. All rights reserved.
+                © 2025 Founder Workspace. All rights reserved by PTS.
               </p>
               <div className="flex items-center justify-center lg:justify-end gap-6 mt-2">
                 <Link href="/privacy" data-testid="link-footer-privacy">

@@ -132,6 +132,18 @@ export default {
         "slide-in-from-bottom-8": "slide-in-from-bottom-8 0.6s ease-out forwards",
         "slide-in-from-left-8": "slide-in-from-left-8 0.6s ease-out forwards",
       },
+      extend: {
+  keyframes: {
+    marquee: {
+      "0%": { transform: "translateX(0%)" },
+      "100%": { transform: "translateX(-50%)" },
+    },
+  },
+  animation: {
+    marquee: "marquee 20s linear infinite",
+  },
+}
+
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],

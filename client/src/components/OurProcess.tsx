@@ -7,7 +7,6 @@ import { useLocation } from "wouter";
 const steps = [
   {
     icon: MessageCircle,
-    number: "01",
     title: "Discovery & Consultation",
     description:
       "We begin with an in-depth consultation to understand your business needs, challenges, and goals.",
@@ -19,7 +18,6 @@ const steps = [
   },
   {
     icon: Search,
-    number: "02",
     title: "Solution Design",
     description:
       "Our experts design a customized solution architecture tailored specifically to your business processes.",
@@ -27,7 +25,6 @@ const steps = [
   },
   {
     icon: Settings,
-    number: "03",
     title: "Implementation & Setup",
     description:
       "Seamless deployment with minimal disruption to your daily operations and comprehensive team training.",
@@ -35,7 +32,6 @@ const steps = [
   },
   {
     icon: Rocket,
-    number: "04",
     title: "Launch & Optimize",
     description:
       "Go live with confidence and continuous optimization to ensure you're getting maximum value.",
@@ -74,38 +70,42 @@ export default function OurProcess() {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center lg:items-start lg:text-left max-w-md w-full"
+                className="flex flex-col items-center text-center lg:items-start lg:text-left max-w-md w-full group/card"
                 data-testid={`process-step-${index + 1}`}
               >
                 {/* Step Number & Icon */}
                 <div className="flex-shrink-0 mb-6">
-                  <div className="relative">
-                    <div className="w-20 h-20 bg-primary rounded-lg flex items-center justify-center">
-                      <Icon className="h-10 w-10 text-primary-foreground" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-foreground rounded-full flex items-center justify-center">
-                      <span className="text-background font-bold text-sm">{step.number}</span>
+                  <div className="relative group/icon">
+                    <div className="w-20 h-20 bg-primary rounded-lg flex items-center justify-center group-hover/card:bg-primary/90 transition-all duration-300 ease-in-out transform group-hover/card:scale-105">
+                      <Icon className="h-10 w-10 text-primary-foreground group-hover/card:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <Card className="w-full border-card-border bg-card hover:shadow-lg transition">
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-semibold text-card-foreground mb-3">
+                <Card className="w-full border-card-border bg-card hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 ease-in-out transform hover:-translate-y-2 group-hover/card:border-primary/30 relative overflow-hidden">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  
+                  <CardContent className="p-8 relative z-10">
+                    <h3 className="text-xl font-semibold text-card-foreground mb-3 group-hover/card:text-primary transition-colors duration-300">
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">{step.description}</p>
+                    <p className="text-muted-foreground mb-6 leading-relaxed group-hover/card:text-foreground/80 transition-colors duration-300">
+                      {step.description}
+                    </p>
 
                     <div className="space-y-2">
-                      <h4 className="text-sm font-medium text-card-foreground">What's included:</h4>
+                      <h4 className="text-sm font-medium text-card-foreground group-hover/card:text-foreground/90 transition-colors duration-300">
+                        What's included:
+                      </h4>
                       <ul className="space-y-1">
                         {step.details.map((detail, detailIndex) => (
                           <li
                             key={detailIndex}
-                            className="flex items-center gap-2 text-sm text-muted-foreground"
+                            className="flex items-center gap-2 text-sm text-muted-foreground group-hover/card:text-foreground/70 transition-colors duration-300"
                           >
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full group-hover/card:scale-125 group-hover/card:bg-primary/80 transition-all duration-300" />
                             {detail}
                           </li>
                         ))}
@@ -131,14 +131,40 @@ export default function OurProcess() {
               size="lg"
               onClick={handleGetStarted}
               data-testid="button-process-get-started"
-              className="flex items-center gap-2 mx-auto"
+              className="flex items-center gap-2 mx-auto relative overflow-hidden group"
             >
-              Get Started Today
-              <ArrowRight className="h-5 w-5" />
+              {/* Animated gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 group-hover:animate-gradient-x transition-all duration-1000"></div>
+              <span className="relative z-10 text-white font-semibold">Get Started Today</span>
+              <ArrowRight className="h-5 w-5 relative z-10 text-white" />
             </Button>
           </div>
         </div>
       </div>
+
+      {/* Add the animation style */}
+      <style jsx>{`
+        @keyframes gradient-x {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        
+        .animate-gradient-x {
+          background-size: 200% 200%;
+          animation: gradient-x 3s ease infinite;
+        }
+        
+        .group:hover .animate-gradient-x {
+          animation: gradient-x 1.5s ease infinite;
+        }
+      `}</style>
     </section>
   );
 }

@@ -130,16 +130,18 @@ export default function Contact() {
 
                   <Button 
                     type="submit" 
-                    className="w-full flex items-center justify-center gap-2"
+                    className="w-full flex items-center justify-center gap-2 relative overflow-hidden group"
                     disabled={isSubmitting}
                     data-testid="button-send-message"
                   >
+                    {/* Animated gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 group-hover:animate-gradient-x transition-all duration-1000"></div>
                     {isSubmitting ? (
-                      "Sending..."
+                      <span className="relative z-10 text-white font-semibold">Sending...</span>
                     ) : (
                       <>
-                        <Send className="h-4 w-4" />
-                        Send Message
+                        <Send className="h-4 w-4 relative z-10 text-white" />
+                        <span className="relative z-10 text-white font-semibold">Send Message</span>
                       </>
                     )}
                   </Button>
@@ -161,8 +163,8 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                    <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground">Email Us</h3>
@@ -171,14 +173,14 @@ export default function Contact() {
                       className="text-muted-foreground hover:text-primary transition-colors"
                       data-testid="link-email"
                     >
-                      support@foundersworkspace.com
+                      hello@foundersworkspace.in
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                    <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground">Call Us</h3>
@@ -187,18 +189,18 @@ export default function Contact() {
                       className="text-muted-foreground hover:text-primary transition-colors"
                       data-testid="link-phone"
                     >
-                      +91 98765 43210
+                      +91 9096649556
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                    <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground">Visit Us</h3>
-                    <p className="text-muted-foreground">123 Business St, Mumbai, India</p>
+                    <p className="text-muted-foreground">Office No A1002 Boulevard Towers,Sadhu Vaswani Chowk, Camp,Pune, Maharashtra,411001,India</p>
                   </div>
                 </div>
               </div>
@@ -209,31 +211,35 @@ export default function Contact() {
                 <div className="flex gap-4">
                   <a 
                     href="#" 
-                    className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover-elevate transition-all duration-300"
+                    className="w-10 h-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white hover-elevate transition-all duration-300 group relative overflow-hidden"
                     data-testid="link-linkedin"
                   >
-                    <Linkedin className="h-5 w-5" />
+                    <div className="absolute inset-0 group-hover:animate-gradient-x transition-all duration-1000"></div>
+                    <Linkedin className="h-5 w-5 relative z-10" />
                   </a>
                   <a 
                     href="#" 
-                    className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover-elevate transition-all duration-300"
+                    className="w-10 h-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white hover-elevate transition-all duration-300 group relative overflow-hidden"
                     data-testid="link-twitter"
                   >
-                    <Twitter className="h-5 w-5" />
+                    <div className="absolute inset-0 group-hover:animate-gradient-x transition-all duration-1000"></div>
+                    <Twitter className="h-5 w-5 relative z-10" />
                   </a>
                   <a 
                     href="#" 
-                    className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover-elevate transition-all duration-300"
+                    className="w-10 h-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white hover-elevate transition-all duration-300 group relative overflow-hidden"
                     data-testid="link-facebook"
                   >
-                    <Facebook className="h-5 w-5" />
+                    <div className="absolute inset-0 group-hover:animate-gradient-x transition-all duration-1000"></div>
+                    <Facebook className="h-5 w-5 relative z-10" />
                   </a>
                   <a 
                     href="#" 
-                    className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover-elevate transition-all duration-300"
+                    className="w-10 h-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white hover-elevate transition-all duration-300 group relative overflow-hidden"
                     data-testid="link-instagram"
                   >
-                    <Instagram className="h-5 w-5" />
+                    <div className="absolute inset-0 group-hover:animate-gradient-x transition-all duration-1000"></div>
+                    <Instagram className="h-5 w-5 relative z-10" />
                   </a>
                 </div>
               </div>
@@ -243,6 +249,30 @@ export default function Contact() {
       </main>
 
       <Footer />
+
+      {/* Add the animation style */}
+      <style jsx>{`
+        @keyframes gradient-x {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        
+        .animate-gradient-x {
+          background-size: 200% 200%;
+          animation: gradient-x 3s ease infinite;
+        }
+        
+        .group:hover .animate-gradient-x {
+          animation: gradient-x 1.5s ease infinite;
+        }
+      `}</style>
     </div>
   );
 }

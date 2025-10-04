@@ -23,7 +23,7 @@ type EmpolMember = {
   id: number;
   name: string;
   position: string;
-  imageSrc: string;
+  imagerc: string;
   instagram: string;
   category: string;
   specialCard?: boolean;
@@ -32,51 +32,51 @@ type EmpolMember = {
 
 export default function EmpolSection() {
   const EmpolMembers: EmpolMember[] = [
-    { id: 1, name: "Chetan Pawar", position: "Capital Partner", imageSrc: img2 , instagram: "https://www.instagram.com/cp.0009", category: "directors" },
+    { id: 1, name: "Chetan Pawar", position: "Capital Partner", imagerc: img2 , instagram: "https://www.instagram.com/cp.0009", category: "directors" },
 
 
-    { id: 2, name: "Rahul Pawar", position: "Founder", imageSrc: img1, instagram: "https://www.linkedin.com/in/rahul-pawar", category: "directors" },
+    { id: 2, name: "Rahul Pawar", position: "Founder", imagerc: img1, instagram: "https://www.linkedin.com/in/rahul-pawar", category: "directors" },
 
     // Manager Section
-    { id: 3, name: "Swapnil Gunake", position: "Project Manager", imageSrc: img3, instagram: "https://www.linkedin.com/in/swapnil-gunake", category: "manager", specialCard: true },
+    { id: 3, name: "Swapnil Gunake", position: "Project Manager", imagerc: img3, instagram: "https://www.linkedin.com/in/swapnil-gunake", category: "manager", specialCard: true },
 
-    { id: 13, name: "We're Hiring!", position: "Assistant Project Manager", imageSrc: img4, instagram: "#", category: "manager", hiring: true },
+    // { id: 13, name: "We're Hiring!", position: "Assistant Project Manager", imagerc: img4, instagram: "#", category: "manager", hiring: true },
 
     // Web Development
-    { id: 4, name: "Faizan Sheikh", position: "Web Development Team Lead", imageSrc: img5, instagram: "https://www.linkedin.com/in/faizan-ashpak-sheikh", category: "web" },
+    { id: 4, name: "Faizan Sheikh", position: "Web Development Team Lead", imagerc: img5, instagram: "https://www.linkedin.com/in/faizan-ashpak-sheikh", category: "web" },
 
-    { id: 5, name: "Samina Begum", position: "Web Development Manager", imageSrc: img12, instagram: "#", category: "web" },
+    { id: 5, name: "Samina Begum", position: "Web Development Manager", imagerc: img12, instagram: "#", category: "web" },
 
     // Software
-    { id: 6, name: "Dhanashree Parale", position: "Software Development", imageSrc: img6, instagram: "http://linkedin.com/in/dhanashree-parale", category: "software" },
+    { id: 6, name: "Dhanashree Parale", position: "Software Development", imagerc: img6, instagram: "http://linkedin.com/in/dhanashree-parale", category: "software" },
 
-    { id: 7, name: "Tushar Goswami", position: "Software Dev Team Leader", imageSrc:img7, instagram: "https://www.linkedin.com/in/rayhan-shaikh", category: "software" },
+    { id: 7, name: "Tushar Goswami", position: "Software Dev Team Leader", imagerc:img7, instagram: "https://www.linkedin.com/in/rayhan-shaikh", category: "software" },
 
     // AI
-    { id: 8, name: "Pranav Mete", position: "AI Research Team", imageSrc: img8, instagram: "https://www.linkedin.com/in/pranavmete123/", category: "ai" },
+    // { id: 8, name: "Pranav Mete", position: "AI Research Team", imagerc: img8, instagram: "https://www.linkedin.com/in/pranavmete123/", category: "ai" },
 
-    { id: 9, name: "Pranav Gaikwad", position: "AI Research Team", imageSrc: img9, instagram: "https://www.linkedin.com/in/pranav-gaikwad", category: "ai" },
+    // { id: 9, name: "Pranav Gaikwad", position: "AI Research Team", imagerc: img9, instagram: "https://www.linkedin.com/in/pranav-gaikwad", category: "ai" },
 
     // Marketing
-    { id: 10, name: "Kunal Pawar", position: "Digital Marketing", imageSrc: img10, instagram: "https://www.linkedin.com/in/kunal-pawar", category: "marketing", specialCard: true },
-    { id: 14, name: "Krip Shah", position: "Digital Marketer", imageSrc: img11, instagram: "", category: "marketing" },
+    { id: 10, name: "Kunal Pawar", position: "Digital Marketing", imagerc: img10, instagram: "https://www.linkedin.com/in/kunal-pawar", category: "marketing", specialCard: true },
+    { id: 14, name: "Isidor Joseph", position: "Digital Marketer", imagerc: img11, instagram: "", category: "marketing" },
 
     // Sales Team
-    // { id: 11, name: "Siddhant Gaikwad", position: "Senior Sales Manager", imageSrc: "/image/Empol/11 (11).png", instagram: "https://www.linkedin.com/in/siddhant-gaikwad", category: "sales" },
-    // { id: 12, name: "Aditya Sabnis", position: "IT Sales Consultant", imageSrc: "/image/Empol/11 (19).jpg", instagram: "https://www.linkedin.com/in/krishna-suthar", category: "sales" },
+    // { id: 11, name: "Siddhant Gaikwad", position: "Senior Sales Manager", imagerc: "/image/Empol/11 (11).png", instagram: "https://www.linkedin.com/in/siddhant-gaikwad", category: "sales" },
+    // { id: 12, name: "Aditya Sabnis", position: "IT Sales Consultant", imagerc: "/image/Empol/11 (19).jpg", instagram: "https://www.linkedin.com/in/krishna-suthar", category: "sales" },
 
     // ✅ New Hiring Cards in Sales Team
-    { id: 15, name: "We're Hiring!", position: "Business Development Executive", imageSrc: "/image/Empol/11 (20).jpg", instagram: "#", category: "sales", hiring: true },
-    { id: 16, name: "We're Hiring!", position: "Sales Intern", imageSrc: "/image/Empol/11 (21).jpg", instagram: "#", category: "sales", hiring: true },
+    { id: 15, name: "We're Hiring!", position: "Business Development Executive", imagerc: "/image/Empol/11 (20).jpg", instagram: "#", category: "sales", hiring: true },
+    { id: 16, name: "We're Hiring!", position: "Sales Intern", imagerc: "/image/Empol/11 (21).jpg", instagram: "#", category: "sales", hiring: true },
   ];
 
   const categories = [
     { id: "directors", name: "Directors" },
     { id: "manager", name: "Manager" },
-    { id: "sales", name: "Sales Team" },
+    // { id: "sales", name: "Sales Team" },
     { id: "web", name: "Web Development" },
     { id: "software", name: "Software Developers" },
-    { id: "ai", name: "AI Solutions" },
+    // { id: "ai", name: "AI Solutions" },
     { id: "marketing", name: "Digital Marketing" },
   ];
 
@@ -213,9 +213,9 @@ export default function EmpolSection() {
                       } w-full overflow-hidden`}
                     >
                       <Img
-                        src={member.imageSrc}
+                        src={member.imagerc}
                         alt={member.name}
-                        className={`object-cover w-full h-full rounded-t-xl sm:rounded-t-2xl transition-transform duration-700 group-hover:scale-110 ${
+                        className={`object-contain w-full h-full rounded-t-xl sm:rounded-t-2xl transition-transform duration-700 group-hover:scale-110 ${
                           member.hiring ? "opacity-80" : ""
                         }`}
                       />

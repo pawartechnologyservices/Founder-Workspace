@@ -253,17 +253,19 @@ export default function BookDemo() {
                 <div className="pt-4">
                   <Button 
                     type="submit" 
-                    className="w-full flex items-center justify-center gap-2"
+                    className="w-full flex items-center justify-center gap-2 relative overflow-hidden group"
                     disabled={isSubmitting}
                     size="lg"
                     data-testid="button-schedule-demo"
                   >
+                    {/* Animated gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 group-hover:animate-gradient-x transition-all duration-1000"></div>
                     {isSubmitting ? (
-                      "Scheduling Demo..."
+                      <span className="relative z-10 text-white font-semibold">Scheduling Demo...</span>
                     ) : (
                       <>
-                        <Calendar className="h-5 w-5" />
-                        Schedule Demo
+                        <Calendar className="h-5 w-5 relative z-10 text-white" />
+                        <span className="relative z-10 text-white font-semibold">Schedule Demo</span>
                       </>
                     )}
                   </Button>
@@ -314,6 +316,30 @@ export default function BookDemo() {
         </div>
       </main>
       <Footer />
+
+      {/* Add the animation style */}
+      <style jsx>{`
+        @keyframes gradient-x {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        
+        .animate-gradient-x {
+          background-size: 200% 200%;
+          animation: gradient-x 3s ease infinite;
+        }
+        
+        .group:hover .animate-gradient-x {
+          animation: gradient-x 1.5s ease infinite;
+        }
+      `}</style>
     </div>
   );
 }

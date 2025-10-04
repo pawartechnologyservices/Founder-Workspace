@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Building, CreditCard, HelpCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Users, Building, CreditCard, HelpCircle, Mail } from "lucide-react";
 
 const faqData = [
   {
@@ -143,20 +144,28 @@ export default function FAQ() {
                   Our support team is here to help. Get in touch and we'll answer any questions about our software solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
-                    href="/contact" 
-                    className="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover-elevate transition-all duration-300"
-                    data-testid="button-contact-us"
+                  <Button
+                    asChild
+                    className="flex items-center gap-2 relative overflow-hidden group"
                   >
-                    Contact Support
-                  </a>
-                  <a 
-                    href="mailto:support@foundersworkspace.com" 
-                    className="inline-flex items-center justify-center rounded-md border border-primary text-primary px-6 py-3 text-sm font-medium hover-elevate transition-all duration-300"
-                    data-testid="button-email-support"
+                    <a href="/contact" data-testid="button-contact-us">
+                      {/* Animated gradient background */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 group-hover:animate-gradient-x transition-all duration-1000"></div>
+                      <span className="relative z-10 text-white font-semibold">Contact Support</span>
+                    </a>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    asChild
+                    className="flex items-center gap-2 relative overflow-hidden group border-primary"
                   >
-                    Email Us
-                  </a>
+                    <a href="mailto:support@foundersworkspace.com" data-testid="button-email-support">
+                      {/* Animated gradient background */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 group-hover:animate-gradient-x transition-all duration-1000"></div>
+                      <Mail className="h-4 w-4 relative z-10 text-white" />
+                      <span className="relative z-10 text-white font-semibold">Email Us</span>
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -164,6 +173,30 @@ export default function FAQ() {
         </div>
       </main>
       <Footer />
+
+      {/* Add the animation style */}
+      <style jsx>{`
+        @keyframes gradient-x {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        
+        .animate-gradient-x {
+          background-size: 200% 200%;
+          animation: gradient-x 3s ease infinite;
+        }
+        
+        .group:hover .animate-gradient-x {
+          animation: gradient-x 1.5s ease infinite;
+        }
+      `}</style>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import OurProcess from "@/components/OurProcess";
 import SoftwareDetails from "@/components/SoftwareDetails";
 import Cts from "@/components/Cts"
 import Ourteam from "@/components/Ourteam"
-
+import Client from "@/components/Client"
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -19,6 +19,7 @@ export default function Home() {
         <WhyChooseUs />
         <OurProcess />
         <SoftwareDetails />
+        <Client/>
         <Cts/>
         <Ourteam/>
       </main>
